@@ -1,0 +1,51 @@
+{
+  "module": "Role Based Access Control",
+  "version": "1.0.0",
+  "base_url": "https://api.company.com/v1",
+  "endpoints": [
+    {
+      "name": "Create Role",
+      "method": "POST",
+      "endpoint": "/roles",
+      "description": "Creates a new role.",
+      "request_body": {
+        "role_name": "string",
+        "description": "string",
+        "permissions": [
+          "user.create",
+          "user.update",
+          "dealer.delete"
+        ]
+      }
+    },
+    {
+      "name": "Get Roles",
+      "method": "GET",
+      "endpoint": "/roles"
+    },
+    {
+      "name": "Update Role",
+      "method": "PUT",
+      "endpoint": "/roles/{role_id}",
+      "request_body": {
+        "role_name": "string",
+        "permissions": [
+          "string"
+        ]
+      }
+    },
+    {
+      "name": "Assign Role to User",
+      "method": "POST",
+      "endpoint": "/users/{user_id}/assign-role",
+      "request_body": {
+        "role_id": "integer"
+      }
+    },
+    {
+      "name": "Permission Matrix",
+      "method": "GET",
+      "endpoint": "/permissions"
+    }
+  ]
+}

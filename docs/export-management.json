@@ -1,0 +1,39 @@
+{
+  "module": "Export Management",
+  "version": "1.0.0",
+  "base_url": "https://api.company.com/v1",
+  "endpoints": [
+    {
+      "name": "Export Users",
+      "method": "GET",
+      "endpoint": "/exports/users",
+      "query_params": {
+        "format": "csv/xlsx/pdf",
+        "date_from": "YYYY-MM-DD",
+        "date_to": "YYYY-MM-DD"
+      },
+      "response": {
+        "download_url": "string"
+      }
+    },
+    {
+      "name": "Export Dealers",
+      "method": "GET",
+      "endpoint": "/exports/dealers",
+      "query_params": {
+        "format": "csv/xlsx/pdf",
+        "status": "active/inactive"
+      }
+    },
+    {
+      "name": "Export Audit Logs",
+      "method": "GET",
+      "endpoint": "/exports/audit-logs",
+      "query_params": {
+        "user_id": "integer",
+        "action": "string",
+        "format": "csv/xlsx"
+      }
+    }
+  ]
+}

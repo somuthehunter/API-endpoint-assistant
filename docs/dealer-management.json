@@ -1,0 +1,53 @@
+{
+  "module": "Dealer Management",
+  "version": "1.0.0",
+  "base_url": "https://api.company.com/v1",
+  "endpoints": [
+    {
+      "name": "Create Dealer",
+      "method": "POST",
+      "endpoint": "/dealers",
+      "request_body": {
+        "dealer_name": "string",
+        "email": "string",
+        "phone": "string",
+        "address": "string",
+        "gst_number": "string"
+      }
+    },
+    {
+      "name": "Get Dealers",
+      "method": "GET",
+      "endpoint": "/dealers",
+      "query_params": {
+        "page": "integer",
+        "limit": "integer",
+        "search": "string",
+        "status": "active/inactive"
+      }
+    },
+    {
+      "name": "Update Dealer",
+      "method": "PUT",
+      "endpoint": "/dealers/{dealer_id}",
+      "request_body": {
+        "dealer_name": "string",
+        "phone": "string",
+        "address": "string"
+      }
+    },
+    {
+      "name": "Delete Dealer",
+      "method": "DELETE",
+      "endpoint": "/dealers/{dealer_id}"
+    },
+    {
+      "name": "Change Dealer Status",
+      "method": "PATCH",
+      "endpoint": "/dealers/{dealer_id}/status",
+      "request_body": {
+        "status": "active/inactive"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "module": "User Management",
+  "version": "1.0.0",
+  "base_url": "https://api.company.com/v1",
+  "endpoints": [
+    {
+      "name": "Create User",
+      "method": "POST",
+      "endpoint": "/users",
+      "description": "Creates a new user in the system.",
+      "authentication": "Bearer Token",
+      "request_body": {
+        "first_name": "string",
+        "last_name": "string",
+        "email": "string",
+        "phone_number": "string",
+        "password": "string",
+        "role_id": "integer"
+      },
+      "responses": {
+        "201": {
+          "message": "User created successfully"
+        },
+        "400": {
+          "message": "Validation error"
+        }
+      }
+    },
+    {
+      "name": "Get User List",
+      "method": "GET",
+      "endpoint": "/users",
+      "description": "Returns paginated list of users.",
+      "query_params": {
+        "page": "integer",
+        "limit": "integer",
+        "search": "string",
+        "status": "active/inactive"
+      }
+    },
+    {
+      "name": "Update User",
+      "method": "PUT",
+      "endpoint": "/users/{user_id}",
+      "request_body": {
+        "first_name": "string",
+        "last_name": "string",
+        "phone_number": "string",
+        "role_id": "integer"
+      }
+    },
+    {
+      "name": "Delete User",
+      "method": "DELETE",
+      "endpoint": "/users/{user_id}"
+    }
+  ]
+}
